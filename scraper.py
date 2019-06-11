@@ -6,7 +6,7 @@ import sqlite3
 import requests
 import pickle
 import json
-import pandas as pd
+#import pandas as pd
 
 def main(argv):
 
