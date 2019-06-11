@@ -6,6 +6,7 @@ import sqlite3
 import requests
 import pickle
 import json
+import scraperwiki
 #import pandas as pd
 
 def main(argv):
