@@ -63,11 +63,13 @@ def main(argv):
     if sendTrayNotification:
         os.system(notify)
     else:
-        print ('[Debug] Tray Notification is off.')
+        #print ('[Debug] Tray Notification is off.')
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
 
+scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})    
+    
 class Object(object):
     def __init__(self, name, value):
         self.name = name
@@ -85,11 +87,14 @@ with open('saveobj1.pkl', 'rb') as input:
     data1 = pickle.load(input)
     data2 = pickle.load(input)
 coll = (2, data1.value, data2.value)
-con = sqlite3.connect('aqi.sqlite')
-with con:
+scraperwiki.sqlite.save(unique_keys=['id'], data={"date": "12.06.19", "value": "pm2.5"}) 
+    
+    
+#con = sqlite3.connect('aqi.sqlite')
+'''with con:
     cur = con.cursor()
     cur.execute("DROP TABLE IF EXISTS AirData")
     cur.execute("CREATE TABLE  AirData(Id INT, Date DATE, Pm25 INT)")
     cur.execute("INSERT INTO AirData VALUES (?, ?, ?)", coll)
 table = pd.read_sql_query("SELECT * FROM AirData", con)
-table.head()
+table.head()'''
