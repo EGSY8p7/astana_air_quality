@@ -20,7 +20,6 @@ def main(argv):
     url = 'http://api.waqi.info/feed/'+city+'/?token=' + accesstoken
     #print('URL: ',url)
 
-
     r = requests.get(url, auth=('user', 'pass'))
 
     if r.status_code == 200:
@@ -86,9 +85,9 @@ with open('saveobj1.pkl', 'rb') as input:
     data1 = pickle.load(input)
     data2 = pickle.load(input)
 coll = (2, data1.value, data2.value)
-scraperwiki.sqlite.save(unique_keys=['id'], data={"date": "12.06.19", "value": "pm2.5"}) 
-    
-    
+scraperwiki.sqlite.save(unique_keys=['id'], data={"date": DATE, "pm25": INT}) 
+scraperwiki.sql.select("* from data where 'date'= data1.value")
+scraperwiki.sql.select("* from data where 'date'= data2.value")
 #con = sqlite3.connect('aqi.sqlite')
 '''with con:
     cur = con.cursor()
