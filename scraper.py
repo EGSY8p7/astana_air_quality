@@ -63,7 +63,7 @@ def main(argv):
     if sendTrayNotification:
         os.system(notify)
     else:
-        #print ('[Debug] Tray Notification is off.')
+        print ('[Debug] Tray Notification is off.')
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
