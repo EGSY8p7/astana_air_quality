@@ -67,8 +67,6 @@ def main(argv):
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
-
-scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})    
     
 class Object(object):
     def __init__(self, name, value):
