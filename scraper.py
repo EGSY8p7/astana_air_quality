@@ -6,6 +6,7 @@ import sqlite3
 import requests
 import json
 import urllib
+import scraperwiki
 
 
 def get_aqi_data(city, token):
@@ -53,8 +54,9 @@ else:
         print("Нет данных")
 
 
-# create DB
-database = sqlite3.connect('Astana.db')
+# create DB ScraperWiki.save_sqlite([:artist, :album], review)
+ScraperWiki.config = { db: 'data.sqlite', default_table_name: 'data' }
+#database = sqlite3.connect('Astana.db')
 cur = database.cursor()
 cur.execute('''CREATE TABLE IF NOT EXISTS AirData
               (Number INT, DateT Datetime, PM25 INT)''')
