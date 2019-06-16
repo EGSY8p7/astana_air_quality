@@ -6,7 +6,6 @@ import sqlite3
 import requests
 import json
 import urllib
-import pandas as pd
 
 
 def get_aqi_data(city, token):
